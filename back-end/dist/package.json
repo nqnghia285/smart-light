@@ -31,9 +31,9 @@
         "typescript": "^4.2.3"
     },
     "scripts": {
-        "build": "tsc && cp -a ./.env dist/ && cp -a ./public/. dist/",
-        "dev": "nodemon server.ts",
-        "start": "node ./dist/server"
+        "build": "tsc && cp -a ./package.json dist/ && cp -a ./.env dist/",
+        "dev": "nodemon server",
+        "start": "node server"
     },
     "devDependencies": {
         "nodemon": "^2.0.7"

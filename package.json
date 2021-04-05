@@ -8,7 +8,7 @@
         "heroku-prebuild": "yarn",
         "deploy": "sh ./deploy.sh",
         "build": "cd front-end/ && yarn && yarn build && cp -a build/. ../back-end/public/",
-        "start": "cd back-end/ && node server.ts",
+        "start": "cd back-end/ && yarn start",
         "git": "sh git-push.sh"
     },
     "engines": {
