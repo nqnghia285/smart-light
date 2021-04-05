@@ -23,7 +23,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.app = void 0;
-const dotenv_1 = __importDefault(require("dotenv"));
 const express_1 = __importDefault(require("express"));
 const http = __importStar(require("http"));
 const ip_1 = require("ip");
@@ -33,7 +32,9 @@ const setup_express_app_1 = require("./@types/setup-express-app");
 const socket_io_1 = __importStar(require("./@types/socket.io"));
 const api_1 = __importDefault(require("./api"));
 const events_1 = require("./events");
-dotenv_1.default.config();
+if (process.env.NODE_ENV !== "production") {
+    require("dotenv").config();
+}
 const PORT = parseInt(process.env.PORT || "5000", 10);
 const ORIGIN = process.env.ORIGIN || "*";
 const HOST_NAME = process.env.HOST_NAME || "0.0.0.0";
