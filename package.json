@@ -1,0 +1,18 @@
+{
+    "name": "smart-light",
+    "version": "1.0.0",
+    "description": "Project Smart Light",
+    "author": "nghia <nqnghia285@gmail.com>",
+    "license": "MIT",
+    "scripts": {
+        "heroku-prebuild": "yarn",
+        "deploy": "sh ./deploy.sh",
+        "build": "cd front-end/ && yarn && yarn build && cp -a build/. ../back-end/public/",
+        "start": "cd back-end/ && node server.ts",
+        "git": "sh git-push.sh"
+    },
+    "engines": {
+        "node": "14.x",
+        "yarn": "1.x"
+    }
+}

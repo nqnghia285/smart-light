@@ -1,0 +1,40 @@
+{
+    "name": "smart-light",
+    "version": "1.0.0",
+    "main": "server.ts",
+    "author": "Nghia Quang Ngo",
+    "license": "MIT",
+    "dependencies": {
+        "@types/bcrypt": "^3.0.0",
+        "@types/body-parser": "^1.19.0",
+        "@types/cookie-parser": "^1.4.2",
+        "@types/express": "^4.17.11",
+        "@types/ip": "^1.1.0",
+        "@types/jsonwebtoken": "^8.5.1",
+        "@types/node": "^14.14.35",
+        "@types/validator": "^13.1.3",
+        "bcrypt": "^5.0.1",
+        "body-parser": "^1.19.0",
+        "cookie": "^0.4.1",
+        "cookie-parser": "^1.4.5",
+        "cors": "^2.8.5",
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "http": "^0.0.1-security",
+        "ip": "^1.1.5",
+        "jsonwebtoken": "^8.5.1",
+        "path": "^0.12.7",
+        "pg": "^8.5.1",
+        "pg-hstore": "^2.3.3",
+        "sequelize": "^6.6.2",
+        "socket.io": "^4.0.0",
+        "typescript": "^4.2.3"
+    },
+    "scripts": {
+        "dev": "nodemon server.ts",
+        "start": "node server.ts"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.7"
+    }
+}
