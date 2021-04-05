@@ -8,7 +8,7 @@ yarn build
 cp -a build/. ../back-end/public/
 
 # Move to back-end folder
-cd back-end/
+cd ../back-end/
 
 # Build back-end
 yarn build
