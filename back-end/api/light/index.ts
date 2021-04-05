@@ -1,7 +1,7 @@
 import { Request, Response, Router } from "express";
 import { createLight } from "./functions/Create";
 import { deleteLight } from "./functions/Delete";
-import { getAllLight } from "./functions/getAll";
+import { getAllLight } from "./functions/GetAll";
 import { updateLight } from "./functions/Update";
 
 const LightRoute = Router();
