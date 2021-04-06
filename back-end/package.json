@@ -22,9 +22,10 @@
         "socket.io": "^4.0.0"
     },
     "scripts": {
-        "build": "tsc && cp -a ./public/. dist/public/",
+        "build1": "tsc && cp -a ./public/. dist/public/",
         "dev": "nodemon server.ts",
-        "start": "node ./dist/server.js"
+        "start1": "node ./dist/server.js",
+        "start": "ts-node server.ts"
     },
     "devDependencies": {
         "@types/bcrypt": "^3.0.0",

@@ -7,7 +7,8 @@
     "scripts": {
         "heroku-prebuild": "cd front-end/ && yarn && cd ../back-end/ && yarn install --prod=false",
         "deploy": "sh ./deploy.sh",
-        "build": "cd front-end/ && yarn build && cp -a build/. ../back-end/public/ && cd ../back-end/ && yarn build",
+        "build1": "cd front-end/ && yarn build && cp -a build/. ../back-end/public/ && cd ../back-end/ && yarn build",
+        "build": "cd front-end/ && yarn build && cp -a build/. ../back-end/public/",
         "start": "cd back-end/ && yarn start",
         "git": "sh git-push.sh"
     },
