@@ -1,8 +1,7 @@
-// import dotenv from "dotenv";
+import dotenv from "dotenv";
 import { Dialect, Sequelize } from "sequelize";
-import { dotenvConfig } from "../@types/dotenv";
 
-dotenvConfig();
+dotenv.config();
 
 export const sequelize: Sequelize = connect();
 
