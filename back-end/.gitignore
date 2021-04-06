@@ -3,6 +3,8 @@
 
 # production
 /build
+/public
+/dist
 
 # debug
 npm-debug.log*
