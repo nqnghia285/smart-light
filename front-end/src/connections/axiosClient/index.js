@@ -2,7 +2,7 @@ import Axios from "axios";
 import queryString from "query-string";
 
 const axiosCient = Axios.create({
-    baseURL: "http://localhost:5000/api",
+    baseURL: "https://smartlightheroku.herokuapp.com/api",
     headers: {
         "content-type": "application/json",
     },
