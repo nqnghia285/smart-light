@@ -1,5 +1,6 @@
-import dotenv from "dotenv";
+// import dotenv from "dotenv";
 import { hashPWD } from "../@types/bcrypt";
+import { dotenvConfig } from "../@types/dotenv";
 import log from "../@types/log";
 import { initController } from "../@types/system-functions";
 import { StatusType } from "../interface";
@@ -12,7 +13,7 @@ import { Script } from "./models/Script";
 import { User } from "./models/User";
 import { createTemplates } from "./templates";
 
-dotenv.config();
+dotenvConfig();
 
 // Export models
 export const CaseModel = Case;

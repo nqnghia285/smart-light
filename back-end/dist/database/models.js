@@ -13,8 +13,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserModel = exports.ScriptModel = exports.RoomModel = exports.LightModel = exports.ControllerModel = exports.CaseModel = void 0;
-const dotenv_1 = __importDefault(require("dotenv"));
 const bcrypt_1 = require("../@types/bcrypt");
+const dotenv_1 = require("../@types/dotenv");
 const log_1 = __importDefault(require("../@types/log"));
 const system_functions_1 = require("../@types/system-functions");
 const interface_1 = require("../interface");
@@ -26,7 +26,7 @@ const Room_1 = require("./models/Room");
 const Script_1 = require("./models/Script");
 const User_1 = require("./models/User");
 const templates_1 = require("./templates");
-dotenv_1.default.config();
+dotenv_1.dotenvConfig();
 exports.CaseModel = Case_1.Case;
 exports.ControllerModel = Controller_1.Controller;
 exports.LightModel = Light_1.Light;

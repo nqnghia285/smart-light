@@ -28,12 +28,14 @@
         "pg-hstore": "^2.3.3",
         "sequelize": "^6.6.2",
         "socket.io": "^4.0.0",
+        "ts-node": "^9.1.1",
         "typescript": "^4.2.3"
     },
     "scripts": {
         "build": "tsc && cp -a ./.env dist/ && cp -a ./public/. dist/public/",
         "dev": "nodemon server.ts",
-        "start": "node ./dist/server"
+        "start1": "node ./dist/server",
+        "start": "node server.ts"
     },
     "devDependencies": {
         "nodemon": "^2.0.7"

@@ -27,14 +27,13 @@ const express_1 = __importDefault(require("express"));
 const http = __importStar(require("http"));
 const ip_1 = require("ip");
 const path_1 = __importDefault(require("path"));
+const dotenv_1 = require("./@types/dotenv");
 const log_1 = __importDefault(require("./@types/log"));
 const setup_express_app_1 = require("./@types/setup-express-app");
 const socket_io_1 = __importStar(require("./@types/socket.io"));
 const api_1 = __importDefault(require("./api"));
 const events_1 = require("./events");
-if (process.env.NODE_ENV !== "production") {
-    require("dotenv").config();
-}
+dotenv_1.dotenvConfig();
 const PORT = parseInt(process.env.PORT || "5000", 10);
 const ORIGIN = process.env.ORIGIN || "*";
 const HOST_NAME = process.env.HOST_NAME || "0.0.0.0";

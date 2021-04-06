@@ -1,10 +1,11 @@
-import dotenv from "dotenv";
+// import dotenv from "dotenv";
 import { RoomModel } from "../../database/models";
 import { Light } from "../../database/models/Light";
 import { ControllerInterface, LightInterface, RoomInterface } from "../../interface";
 import { app } from "../../server";
+import { dotenvConfig } from "../dotenv";
 
-dotenv.config();
+dotenvConfig();
 
 export async function initController(): Promise<void> {
     const attributes = ["roomId", "name"];

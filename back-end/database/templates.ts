@@ -1,5 +1,4 @@
 import { ControllerModel, ScriptModel } from "./models";
-import { Case } from "./models/Case";
 import { Room } from "./models/Room";
 
 export async function createTemplates() {

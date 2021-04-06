@@ -3,15 +3,14 @@ import express, { Request, Response } from "express";
 import * as http from "http";
 import { address } from "ip";
 import path from "path";
+import { dotenvConfig } from "./@types/dotenv";
 import log from "./@types/log";
 import { route, setup } from "./@types/setup-express-app";
 import io, { createNamespace, initIO } from "./@types/socket.io";
 import RootRoute from "./api";
 import { clientHandler, ioHandler } from "./events";
 
-if (process.env.NODE_ENV !== "production") {
-    require("dotenv").config();
-}
+dotenvConfig();
 
 const PORT = parseInt(process.env.PORT || "5000", 10);
 const ORIGIN = process.env.ORIGIN || "*";
