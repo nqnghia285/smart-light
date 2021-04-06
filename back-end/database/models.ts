@@ -56,7 +56,7 @@ Light.afterCreate(async (light: Light, _options) => {
 
 // Synchronize database
 (async () => {
-    const force = { force: process.env.ENV_NODE === "develop" };
+    const force = { force: true };
     await sequelize
         .sync(force)
         .then(() => {
