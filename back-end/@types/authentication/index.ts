@@ -1,13 +1,15 @@
 import { Request } from "express";
-import jwt from "jsonwebtoken";
+import jwt, { SignOptions, Secret } from "jsonwebtoken";
+import { Socket } from "socket.io";
 import { RequestType, UserInfo } from "../../interface";
 import log from "../log";
-const jwtKey: jwt.Secret = process.env.JWT_KEY || "jwt-key-dev";
+
+const jwtKey: Secret = process.env.JWT_KEY || "jwt-key-dev";
 
 // Authenticate user
 // Return payload if token is valid
 // otherwise return undefined
-export function authenticateUser(token: string) {
+export function authenticateUser(token: string): UserInfo | undefined {
     try {
         const obj: any = jwt.verify(token, jwtKey);
         const payload: UserInfo = obj;
@@ -21,7 +23,7 @@ export function authenticateUser(token: string) {
 // Create a token for payload
 // Return an encoded token if the function is not error
 // otherwise return undefined
-export function createToken(payload: string | object | Buffer, option?: jwt.SignOptions | undefined) {
+export function createToken(payload: string | object | Buffer, option?: SignOptions | undefined): string | undefined {
     try {
         return jwt.sign(payload, jwtKey, option);
     } catch (error) {
@@ -33,7 +35,7 @@ export function createToken(payload: string | object | Buffer, option?: jwt.Sign
 // Authenticate user
 // Return payload if token is valid
 // otherwise return undefined
-export function authenticateUserFromReq(req: Request | RequestType) {
+export function authenticateUserFromReq(req: Request | RequestType): UserInfo | undefined {
     // Get token in headers
     // let userToken = req.headers['authorization'] || req.headers['x-access-token']
     // console.log('cookie: ' + req.headers.cookie);
@@ -49,4 +51,9 @@ export function authenticateUserFromReq(req: Request | RequestType) {
     } else {
         return undefined;
     }
+}
+
+export function authenticateUserFromSocket(socket: Socket): UserInfo | undefined {
+    const req: RequestType = socket.request;
+    return authenticateUserFromReq(req);
 }

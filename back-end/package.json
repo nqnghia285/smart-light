@@ -23,7 +23,7 @@
     },
     "scripts": {
         "build": "tsc && cp -a ./public/. dist/public/",
-        "dev": "nodemon server.ts",
+        "dev": "cd ../front-end/ && yarn build && cp -a build/. ../back-end/public/ && cd ../back-end/ && nodemon server.ts",
         "start1": "node ./dist/server.js",
         "start": "ts-node server.ts"
     },
