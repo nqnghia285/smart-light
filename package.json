@@ -5,9 +5,9 @@
     "author": "nghia <nqnghia285@gmail.com>",
     "license": "MIT",
     "scripts": {
-        "heroku-prebuild": "yarn",
+        "heroku-prebuild": "cd front-end/ && yarn && cd ../back-end/ && yarn",
         "deploy": "sh ./deploy.sh",
-        "build": "cd front-end/ && yarn && yarn build && cp -a build/. ../back-end/public/ && cd ../back-end/ && yarn build",
+        "build": "cd front-end/ && yarn build && cp -a build/. ../back-end/public/ && cd ../back-end/ && yarn build",
         "start": "cd back-end/ && yarn start",
         "git": "sh git-push.sh"
     },
