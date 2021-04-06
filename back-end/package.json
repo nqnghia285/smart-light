@@ -34,8 +34,7 @@
     "scripts": {
         "build": "tsc && cp -a ./public/. dist/public/",
         "dev": "nodemon server.ts",
-        "start1": "node ./dist/server.js",
-        "start": "node ./server.ts"
+        "start": "node ./dist/server.js"
     },
     "devDependencies": {
         "nodemon": "^2.0.7"
