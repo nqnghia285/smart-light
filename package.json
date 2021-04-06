@@ -5,7 +5,7 @@
     "author": "nghia <nqnghia285@gmail.com>",
     "license": "MIT",
     "scripts": {
-        "heroku-prebuild": "cd front-end/ && yarn && cd ../back-end/ && yarn install --prod=false && npm install --global typescript",
+        "heroku-prebuild": "cd front-end/ && yarn && cd ../back-end/ && yarn install --prod=false",
         "deploy": "sh ./deploy.sh",
         "build1": "cd front-end/ && yarn build && cp -a build/. ../back-end/public/ && cd ../back-end/ && yarn build",
         "build": "cd front-end/ && yarn build && cp -a build/. ../back-end/public/",
@@ -14,7 +14,6 @@
     },
     "engines": {
         "node": "14.x",
-        "yarn": "1.x",
-        "npm": "6.x"
+        "yarn": "1.x"
     }
 }
