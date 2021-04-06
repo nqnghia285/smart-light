@@ -6,7 +6,7 @@ dotenv.config();
 export const sequelize: Sequelize = connect();
 
 function connect(): Sequelize {
-    if (process.env.ENV_NODE === "production") {
+    if (process.env.NODE_ENV === "production") {
         const DATABASE_URL: string = process.env.DATABASE_URL || "undefined";
 
         return new Sequelize(DATABASE_URL, {
