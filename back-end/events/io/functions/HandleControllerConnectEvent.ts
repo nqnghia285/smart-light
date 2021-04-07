@@ -5,22 +5,18 @@ import { ControllerEvent, LightInterface, RoomInterface, ServerEvent } from "../
 
 export function handleControllerConnect(socket: Socket) {
     socket.on(ControllerEvent.CONTROLLER_CONNECT, async (message) => {
-        const response: { isSuccess: boolean; rooms: RoomInterface[] } = { isSuccess: false, rooms: [] };
-        const code = message?.code;
-        const include = [{ model: RoomModel, as: "rooms", attributes: ["roomId", "name"], include: [{ model: LightModel, as: "lights", attributes: ["lightId", "name"] }] }];
-        await ControllerModel.findOne({ where: { code: code }, include: include })
+        const response: { isSuccess: boolean; lights: number[] } = { isSuccess: false, lights: [] };
+        const where = { code: message?.code };
+        const include = [{ model: LightModel, as: "lights", attributes: ["lightId"] }];
+        await ControllerModel.findOne({ where: where, include: include })
             .then(async (controller) => {
                 if (controller !== null) {
-                    const rooms: RoomInterface[] = [];
-                    controller.rooms?.forEach((room) => {
-                        const lights: LightInterface[] = [];
-                        room.lights?.forEach((light) => {
-                            lights.push({ lightId: light.lightId, name: light.name });
-                        });
-                        rooms.push({ roomId: room.roomId, name: room.name, lights: lights });
+                    const lights: number[] = [];
+                    controller.lights?.forEach((light) => {
+                        lights.push(light.lightId);
                     });
                     response.isSuccess = true;
-                    response.rooms = rooms;
+                    response.lights = lights;
                 }
             })
             .catch((err) => {
