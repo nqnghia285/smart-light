@@ -3,7 +3,6 @@ import express, { Request, Response } from "express";
 import * as http from "http";
 import { address } from "ip";
 import path from "path";
-import log from "./@types/log";
 import { route, setup } from "./@types/setup-express-app";
 import io, { createNamespace, initIO } from "./@types/socket.io";
 import RootRoute from "./api";
@@ -52,5 +51,5 @@ server.listen(PORT, HOST_NAME, () => {
         address: address(),
         message: "Server is running!",
     };
-    log(announcement);
+    console.log(announcement);
 });

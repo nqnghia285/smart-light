@@ -1,6 +1,5 @@
 import dotenv from "dotenv";
 import { hashPWD } from "../@types/bcrypt";
-import log from "../@types/log";
 import { initController } from "../@types/system-functions";
 import { StatusType } from "../interface";
 import { sequelize } from "./connection";
@@ -60,10 +59,10 @@ Light.afterCreate(async (light: Light, _options) => {
     await sequelize
         .sync(force)
         .then(() => {
-            log("Notice: ", "Database is synchronized!");
+            console.log("Notice: ", "Database is synchronized!");
         })
         .catch((err) => {
-            log("Sequelize sync: ", err);
+            console.log("Sequelize sync: ", err);
         });
 
     // Add Admin
@@ -72,7 +71,7 @@ Light.afterCreate(async (light: Light, _options) => {
         type: process.env.TYPE,
     })
         .then(async (controller: Controller) => {
-            log("Notice: ", "Add controller success!");
+            console.log("Notice: ", "Add controller success!");
             await User.create({
                 fullName: process.env.FULL_NAME,
                 email: process.env.EMAIL,
@@ -81,14 +80,14 @@ Light.afterCreate(async (light: Light, _options) => {
                 mcuId: controller.mcuId,
             })
                 .then(() => {
-                    log("Notice: ", "Add admin acconut success!");
+                    console.log("Notice: ", "Add admin acconut success!");
                 })
                 .catch((err) => {
-                    log("Add admin acconut: ", err);
+                    console.log("Add admin acconut: ", err);
                 });
         })
         .catch((err) => {
-            log("Add controller: ", err);
+            console.log("Add controller: ", err);
         });
 
     // Create templates

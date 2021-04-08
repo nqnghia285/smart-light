@@ -1,5 +1,5 @@
+import { authenticateUserFromReq } from "../../../@types/authenticate-user";
 import { Request, Response } from "express";
-import { authenticateUserFromReq } from "../../../@types/authentication";
 import { UserModel } from "../../../database/models";
 import { Controller } from "../../../database/models/Controller";
 import { ResponseType, UserInfo } from "../../../interface";

@@ -1,6 +1,6 @@
+import { authenticateUserFromReq } from "../../../@types/authenticate-user";
 import { Request, Response } from "express";
 import { Op } from "sequelize";
-import { authenticateUserFromReq } from "../../../@types/authentication";
 import { ControllerModel } from "../../../database/models";
 import { ControllerType, ResponseType, RoleType, UserInfo } from "../../../interface";
 

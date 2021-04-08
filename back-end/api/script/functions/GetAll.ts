@@ -1,6 +1,6 @@
+import { authenticateUserFromReq } from "../../../@types/authenticate-user";
 import { Request, Response } from "express";
 import { FindAttributeOptions, Includeable } from "sequelize/types";
-import { authenticateUserFromReq } from "../../../@types/authentication";
 import { ScriptModel, UserModel } from "../../../database/models";
 import { ResponseType, RoleType, UserInfo } from "../../../interface";
 

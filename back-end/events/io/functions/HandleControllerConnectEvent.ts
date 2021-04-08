@@ -1,5 +1,4 @@
 import { Socket } from "socket.io";
-import log from "../../../@types/log";
 import { ControllerModel, LightModel } from "../../../database/models";
 import { ControllerEvent, ServerEvent } from "../../../interface";
 
@@ -20,7 +19,7 @@ export function handleControllerConnect(socket: Socket) {
                 }
             })
             .catch((err) => {
-                log("Error: ", err.message);
+                console.log("Error: ", err.message);
             });
 
         // Response to controller

@@ -1,45 +1,47 @@
 import { Request } from "express";
-import jwt, { SignOptions, Secret } from "jsonwebtoken";
+import { SignOptions, Secret, verify, sign } from "jsonwebtoken";
 import { Socket } from "socket.io";
 import { RequestType, UserInfo } from "../../interface";
-import log from "../log";
 
 const jwtKey: Secret = process.env.JWT_KEY || "jwt-key-dev";
 
-// Authenticate user
-// Return payload if token is valid
-// otherwise return undefined
+/**
+ * @method authenticateUser: Return payload if token is valid, otherwise return undefined
+ * @param token
+ * @returns UserInfo | undefined
+ */
 export function authenticateUser(token: string): UserInfo | undefined {
     try {
-        const obj: any = jwt.verify(token, jwtKey);
+        const obj: any = verify(token, jwtKey);
         const payload: UserInfo = obj;
         return payload;
-    } catch (error) {
-        log(error);
-        return undefined;
-    }
-}
-
-// Create a token for payload
-// Return an encoded token if the function is not error
-// otherwise return undefined
-export function createToken(payload: string | object | Buffer, option?: SignOptions | undefined): string | undefined {
-    try {
-        return jwt.sign(payload, jwtKey, option);
     } catch (error) {
         console.log(error);
         return undefined;
     }
 }
 
-// Authenticate user
-// Return payload if token is valid
-// otherwise return undefined
+/**
+ * @method createToken: Return an encoded token if the function is not error, otherwise return undefined
+ * @param payload
+ * @param option
+ * @returns string | undefined
+ */
+export function createToken(payload: string | object | Buffer, option?: SignOptions | undefined): string | undefined {
+    try {
+        return sign(payload, jwtKey, option);
+    } catch (error) {
+        console.log(error);
+        return undefined;
+    }
+}
+
+/**
+ * @method authenticateUserFromReq: Return payload if token is valid, otherwise return undefined
+ * @param req
+ * @returns UserInfo | undefined
+ */
 export function authenticateUserFromReq(req: Request | RequestType): UserInfo | undefined {
-    // Get token in headers
-    // let userToken = req.headers['authorization'] || req.headers['x-access-token']
-    // console.log('cookie: ' + req.headers.cookie);
-    // console.log('Cookies: ' + JSON.stringify(req.cookies))
     let userToken: string = req?.cookies?.token;
     if (userToken !== undefined) {
         // Remove 'Bearer ' from userToken
@@ -53,6 +55,11 @@ export function authenticateUserFromReq(req: Request | RequestType): UserInfo | 
     }
 }
 
+/**
+ * @method authenticateUserFromSocket
+ * @param socket
+ * @returns UserInfo | undefined
+ */
 export function authenticateUserFromSocket(socket: Socket): UserInfo | undefined {
     const req: RequestType = socket.request;
     return authenticateUserFromReq(req);

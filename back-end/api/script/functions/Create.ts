@@ -1,6 +1,5 @@
+import { authenticateUserFromReq } from "../../../@types/authenticate-user";
 import { Request, Response } from "express";
-import { authenticateUserFromReq } from "../../../@types/authentication";
-import log from "../../../@types/log";
 import { CaseModel, ScriptModel } from "../../../database/models";
 import { ResponseType, ScriptType, StatusLight, StatusType, UserInfo } from "../../../interface";
 
@@ -26,8 +25,6 @@ export async function createScript(req: Request, res: Response): Promise<void> {
         getParams(script, req);
 
         const statusLights: StatusLight[] | undefined = req.body?.lights;
-
-        log("lights: ", statusLights);
 
         // Insert new instance into database
         await ScriptModel.create(script)

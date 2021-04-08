@@ -1,5 +1,5 @@
+import { createToken } from "../../../@types/authenticate-user";
 import { Request, Response } from "express";
-import { createToken } from "../../../@types/authentication";
 import { comparePWD } from "../../../@types/bcrypt";
 import { RoomModel, UserModel } from "../../../database/models";
 import { Light } from "../../../database/models/Light";

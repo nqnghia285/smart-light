@@ -1,5 +1,5 @@
+import { authenticateUserFromReq } from "../../../@types/authenticate-user";
 import { Request, Response } from "express";
-import { authenticateUserFromReq } from "../../../@types/authentication";
 import { LightModel } from "../../../database/models";
 import { Controller } from "../../../database/models/Controller";
 import { Room } from "../../../database/models/Room";
