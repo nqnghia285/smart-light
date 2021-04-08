@@ -1,7 +1,7 @@
 import { Socket } from "socket.io";
 import log from "../../../@types/log";
-import { ControllerModel, LightModel, RoomModel } from "../../../database/models";
-import { ControllerEvent, LightInterface, RoomInterface, ServerEvent } from "../../../interface";
+import { ControllerModel, LightModel } from "../../../database/models";
+import { ControllerEvent, ServerEvent } from "../../../interface";
 
 export function handleControllerConnect(socket: Socket) {
     socket.on(ControllerEvent.CONTROLLER_CONNECT, async (message) => {
