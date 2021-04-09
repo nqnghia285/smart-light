@@ -1,4 +1,4 @@
-import { authenticateUserFromReq } from "../../../@types/authenticate-user";
+import { authenticateUserFromReq } from "authenticate-user";
 import { Request, Response } from "express";
 import { Op } from "sequelize";
 import { LightModel, RoomModel } from "../../../database/models";

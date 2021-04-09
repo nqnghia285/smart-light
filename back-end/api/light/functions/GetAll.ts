@@ -1,4 +1,4 @@
-import { authenticateUserFromReq } from "../../../@types/authenticate-user";
+import { authenticateUserFromReq } from "authenticate-user";
 import { Request, Response } from "express";
 import { LightModel } from "../../../database/models";
 import { Controller } from "../../../database/models/Controller";

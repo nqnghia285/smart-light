@@ -1,4 +1,4 @@
-import { authenticateUserFromReq } from "../../../@types/authenticate-user";
+import { authenticateUserFromReq } from "authenticate-user";
 import { Request, Response } from "express";
 import { FindAttributeOptions, Includeable } from "sequelize/types";
 import { ScriptModel, UserModel } from "../../../database/models";

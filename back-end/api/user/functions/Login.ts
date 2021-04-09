@@ -1,4 +1,4 @@
-import { createToken } from "../../../@types/authenticate-user";
+import { createToken } from "authenticate-user";
 import { Request, Response } from "express";
 import { comparePWD } from "../../../@types/bcrypt";
 import { RoomModel, UserModel } from "../../../database/models";

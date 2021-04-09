@@ -3,7 +3,7 @@ import { hashPWD } from "../../../@types/bcrypt";
 import { ControllerModel, UserModel } from "../../../database/models";
 import { ResponseType, RoleType, UserInfo, UserType } from "../../../interface";
 import dotenv from "dotenv";
-import { authenticateUserFromReq } from "../../../@types/authenticate-user";
+import { authenticateUserFromReq } from "authenticate-user";
 
 dotenv.config();
 
