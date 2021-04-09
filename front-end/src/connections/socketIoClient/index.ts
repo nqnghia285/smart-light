@@ -1,6 +1,6 @@
 import io from "socket.io-client";
 
-const url = process.env.URL || "https://smartlightheroku.herokuapp.com";
+const url = process.env.URL || "https://smartlightheroku.herokuapp.com/client";
 
 export const socketIoClient = io(url);
 

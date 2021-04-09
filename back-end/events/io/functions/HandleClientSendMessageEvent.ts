@@ -1,3 +1,4 @@
+import { authenticateUserFromReq } from "authenticate-user";
 import { Socket } from "socket.io";
 import { ClientEvent, RequestType } from "../../../interface";
 
