@@ -7,6 +7,6 @@ export function handleClientSendMessageEvent(socket: Socket) {
         const req: RequestType = socket.request;
         console.log("Cookies of client:", req.cookies);
         console.log("client-send-message:", message);
-        console.log("Authenticate: ", authenticateUserFromReq(socket.request));
+        console.log("Authenticate: ", authenticateUserFromReq(req));
     });
 }
