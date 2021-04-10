@@ -5,7 +5,7 @@
     "author": "Nghia Quang Ngo",
     "license": "MIT",
     "dependencies": {
-        "authenticate-user": "^1.1.1",
+        "authenticate-user": "^1.1.2",
         "bcrypt": "^5.0.1",
         "body-parser": "^1.19.0",
         "cookie": "^0.4.1",
