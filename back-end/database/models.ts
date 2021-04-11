@@ -1,5 +1,5 @@
+import { hashPWD } from "customed-bcrypt";
 import dotenv from "dotenv";
-import { hashPWD } from "../@types/bcrypt";
 import { initController } from "../@types/system-functions";
 import { StatusType } from "../interface";
 import { sequelize } from "./connection";

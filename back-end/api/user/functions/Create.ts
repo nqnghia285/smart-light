@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
-import { hashPWD } from "../../../@types/bcrypt";
 import { ControllerModel, UserModel } from "../../../database/models";
 import { ResponseType, RoleType, UserInfo, UserType } from "../../../interface";
 import dotenv from "dotenv";
 import { authenticateUserFromReq } from "authenticate-user";
+import { hashPWD } from "customed-bcrypt";
 
 dotenv.config();
 

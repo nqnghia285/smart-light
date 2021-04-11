@@ -1,9 +1,9 @@
 import { createToken } from "authenticate-user";
 import { Request, Response } from "express";
-import { comparePWD } from "../../../@types/bcrypt";
 import { RoomModel, UserModel } from "../../../database/models";
 import { Light } from "../../../database/models/Light";
 import { ResponseType, UserType } from "../../../interface";
+import { comparePWD } from "customed-bcrypt";
 
 const AGE: number = 1 * 60 * 60 * 1000; // 1h
 const DOMAIN: string | undefined = process.env.DOMAIN;

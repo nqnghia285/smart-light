@@ -3,8 +3,8 @@ import express, { Request, Response } from "express";
 import * as http from "http";
 import { address } from "ip";
 import path from "path";
-import { route, setup } from "./@types/setup-express-app";
-import io, { createNamespace, initIO } from "./@types/socket.io";
+import { route, setup } from "config-express-app";
+import io, { createNamespace, initIO } from "setup-socket.io";
 import RootRoute from "./api";
 import { clientHandler, ioHandler } from "./events";
 
