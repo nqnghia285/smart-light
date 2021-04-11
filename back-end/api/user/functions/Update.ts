@@ -1,7 +1,7 @@
 import { authenticateUserFromReq } from "authenticate-user";
+import { hashPWD } from "customed-bcrypt";
 import { Request, Response } from "express";
 import { Op } from "sequelize";
-import { hashPWD } from "../../../@types/bcrypt";
 import { UserModel } from "../../../database/models";
 import { ResponseType, RoleType, UserInfo, UserType } from "../../../interface";
 
