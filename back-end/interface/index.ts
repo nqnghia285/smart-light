@@ -22,15 +22,23 @@ export const ServerEvent = {
     SERVER_SEND_ACK_CONNECTION: "server-send-ack-connection",
     SERVER_SEND_MESSAGE: "server-send-message",
     SERVER_SEND_ACK_CONTROLLER_CONNECT: "server-send-ack-controller-connect",
+    SERVER_SEND_CONTROL_LIGHT: "server-send-control-light",
+    SERVER_SEND_CONTROL_ROOM: "server-send-control-room",
+    SERVER_SEND_ACK_CONTROL_LIGHT: "server-send-ack-control-light",
+    SERVER_SEND_ACK_CONTROL_ROOM: "server-send-ack-control-room",
 };
 
 // Client event
 export const ClientEvent = {
     CLIENT_SEND_MESSAGE: "client-send-message",
+    CLIENT_SEND_CONTROL_LIGHT: "client-send-control-light",
+    CLIENT_SEND_CONTROL_ROOM: "client-send-control-room",
 };
 
 export const ControllerEvent = {
     CONTROLLER_CONNECT: "controller-connect",
+    CONTROLLER_SEND_ACK_CONTROL_LIGHT: "controller-send-ack-control-light",
+    CONTROLLER_SEND_ACK_CONTROL_ROOM: "controller-send-ack-control-room",
 };
 
 export interface LightInterface {

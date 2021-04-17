@@ -10,7 +10,7 @@ import {
     SMALLINT,
     STRING,
 } from "sequelize";
-import { sequelize } from "../connection";
+import sequelize from "sequelize-connection";
 import { Light } from "./Light";
 import { Room } from "./Room";
 import { User } from "./User";

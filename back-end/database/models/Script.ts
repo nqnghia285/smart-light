@@ -1,5 +1,5 @@
 import { Association, HasManyAddAssociationMixin, HasManyCountAssociationsMixin, HasManyGetAssociationsMixin, HasManyHasAssociationsMixin, Model, Optional, SMALLINT, STRING } from "sequelize";
-import { sequelize } from "../connection";
+import sequelize from "sequelize-connection";
 import { Case } from "./Case";
 
 export interface ScriptAttributes {

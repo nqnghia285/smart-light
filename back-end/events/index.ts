@@ -1,9 +1,10 @@
-import { ioListener } from "./io";
+import { Namespace, Server } from "socket.io";
 import { clientListener } from "./client";
+import { ioListener } from "./io";
 
-export function ioHandler(io: any) {
+export function ioHandler(io: Server) {
     ioListener(io);
 }
-export function clientHandler(client: any) {
+export function clientHandler(client: Namespace) {
     clientListener(client);
 }

@@ -1,6 +1,6 @@
 import dotenv from "dotenv";
 import express, { Request, Response } from "express";
-import * as http from "http";
+import { createServer } from "http";
 import { address } from "ip";
 import path from "path";
 import { route, setup } from "config-express-app";
@@ -17,14 +17,14 @@ const HOST_NAME = process.env.HOST_NAME || "0.0.0.0";
 const API_PATH = process.env.API_PATH || "/api";
 
 export const app = express();
-const server = http.createServer(app);
+const server = createServer(app);
 
 /////////////////////////////////////////////////////
 // Init io
 initIO(server, ORIGIN);
 
 // Create client namespace
-const client = createNamespace("/client");
+export const client = createNamespace("/client");
 
 // IO handler
 ioHandler(io);

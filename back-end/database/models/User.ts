@@ -12,7 +12,7 @@ import {
     STRING,
     VIRTUAL,
 } from "sequelize";
-import { sequelize } from "../connection";
+import sequelize from "sequelize-connection";
 import { Script } from "./Script";
 
 interface UserAttributes {

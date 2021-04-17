@@ -1,6 +1,6 @@
 import { Association, ENUM, HasManyAddAssociationMixin, HasManyCountAssociationsMixin, HasManyGetAssociationsMixin, HasManyHasAssociationsMixin, Model, Optional, SMALLINT } from "sequelize";
-import { sequelize } from "../connection";
 import { Script } from "./Script";
+import sequelize from "sequelize-connection";
 
 interface CaseAttributes {
     caseId?: number;

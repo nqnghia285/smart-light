@@ -1,4 +1,4 @@
-import { authenticateUserFromReq } from "authenticate-user";
+import { authenticateUserFromReq, authenticateUserFromSocket } from "authenticate-user";
 import { Socket } from "socket.io";
 import { ClientEvent, RequestType } from "../../../interface";
 
@@ -8,5 +8,6 @@ export function handleClientSendMessageEvent(socket: Socket) {
         console.log("Cookies of client:", req.cookies);
         console.log("client-send-message:", message);
         console.log("Authenticate: ", authenticateUserFromReq(req));
+        console.log("Authenticate by socket: ", authenticateUserFromSocket(socket));
     });
 }

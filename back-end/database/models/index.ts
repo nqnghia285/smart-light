@@ -1,15 +1,15 @@
 import { hashPWD } from "customed-bcrypt";
 import dotenv from "dotenv";
-import { initController } from "../@types/system-functions";
-import { StatusType } from "../interface";
-import { sequelize } from "./connection";
-import { Case } from "./models/Case";
-import { Controller } from "./models/Controller";
-import { Light } from "./models/Light";
-import { Room } from "./models/Room";
-import { Script } from "./models/Script";
-import { User } from "./models/User";
-import { createTemplates } from "./templates";
+import sequelize from "sequelize-connection";
+import { initController } from "../../@types/system-functions";
+import { StatusType } from "../../interface";
+import { Case } from "./Case";
+import { Controller } from "./Controller";
+import { Light } from "./Light";
+import { Room } from "./Room";
+import { Script } from "./Script";
+import { User } from "./User";
+import { createTemplates } from "../templates";
 
 dotenv.config();
 
