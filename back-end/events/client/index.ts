@@ -6,6 +6,7 @@ import { handleClientSendMessageEvent } from "./functions/HandleClientSendMessag
 
 export function clientListener(client: Namespace) {
     client.on("connection", (socket: Socket) => {
+        console.log("Client connected!");
         socket.emit(ServerEvent.SERVER_SEND_ACK_CONNECTION, "Client connected to server.");
 
         // Listener "client-send-message"

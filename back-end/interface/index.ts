@@ -21,6 +21,7 @@ export const StatusType = {
 export const ServerEvent = {
     SERVER_SEND_ACK_CONNECTION: "server-send-ack-connection",
     SERVER_SEND_MESSAGE: "server-send-message",
+    SERVER_SEND_ACK_CONNECTED: "server-send-ack-connected",
     SERVER_SEND_ACK_CONTROLLER_CONNECT: "server-send-ack-controller-connect",
     SERVER_SEND_CONTROL_LIGHT: "server-send-control-light",
     SERVER_SEND_CONTROL_ROOM: "server-send-control-room",
@@ -39,6 +40,7 @@ export const ControllerEvent = {
     CONTROLLER_CONNECT: "controller-connect",
     CONTROLLER_SEND_ACK_CONTROL_LIGHT: "controller-send-ack-control-light",
     CONTROLLER_SEND_ACK_CONTROL_ROOM: "controller-send-ack-control-room",
+    CONTROLLER_SEND_MESSAGE: "controller-send-message",
 };
 
 export interface LightInterface {
@@ -148,4 +150,14 @@ export interface ControllerInterface {
 // ControlerListType
 export interface ControllerListType {
     controllerList?: Array<ControllerInterface>;
+}
+
+export interface CaseInterface {
+    lightId: number;
+    status: boolean;
+}
+export interface ScriptInterface {
+    scriptId: number;
+    name: string;
+    cases: CaseInterface[];
 }

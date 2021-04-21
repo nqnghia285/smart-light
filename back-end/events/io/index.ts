@@ -3,11 +3,12 @@ import { ServerEvent } from "../../interface";
 import { handleControllerConnect } from "./functions/HandleControllerConnectEvent";
 import { handleControllerSendAckControlLightEvent } from "./functions/HandleControllerSendAckControlLightEvent";
 import { handleControllerSendAckControlRoomEvent } from "./functions/HandleControllerSendAckControlRoomEvent";
+import { handleControllerSendMessageEvent } from "./functions/HandleControllerSendMessageEvent";
 import { handleDisconnect } from "./functions/HandleDisconnectEvent";
 
 export function ioListener(io: Server) {
     io.on("connection", (socket: Socket) => {
-        socket.emit(ServerEvent.SERVER_SEND_ACK_CONNECTION, "IO connected to server.");
+        socket.emit(ServerEvent.SERVER_SEND_ACK_CONNECTED, "IO connected to server.");
 
         // Listener "controller-connect"
         handleControllerConnect(socket);
@@ -20,5 +21,8 @@ export function ioListener(io: Server) {
 
         // Disconnect
         handleDisconnect(socket);
+
+        //
+        handleControllerSendMessageEvent(socket);
     });
 }

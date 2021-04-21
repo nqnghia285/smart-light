@@ -1,7 +1,7 @@
 import dotenv from "dotenv";
 import { RoomModel } from "../../database/models";
 import { Light } from "../../database/models/Light";
-import { ControllerInterface, LightInterface, RoomInterface } from "../../interface";
+import { ControllerInterface, LightInterface, RoomInterface, ScriptInterface } from "../../interface";
 import { app } from "../../server";
 
 dotenv.config();
@@ -34,4 +34,9 @@ export async function initController(): Promise<void> {
         .catch((err) => {
             console.log(`Error: ${err.message}`);
         });
+}
+
+export function initScriptList(): void {
+    const scripts: ScriptInterface[] = [];
+    app.locals.scripts = scripts;
 }

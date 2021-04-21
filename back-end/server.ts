@@ -7,6 +7,7 @@ import { route, setup } from "config-express-app";
 import io, { createNamespace, initIO } from "setup-socket.io";
 import RootRoute from "./api";
 import { clientHandler, ioHandler } from "./events";
+import { ServerEvent } from "./interface";
 
 dotenv.config();
 
@@ -31,6 +32,11 @@ ioHandler(io);
 
 // Client handler
 clientHandler(client);
+
+// setInterval(() => {
+//     io.emit(ServerEvent.SERVER_SEND_MESSAGE, "Hi Controller!");
+//     client.emit(ServerEvent.SERVER_SEND_MESSAGE, "Hi Client!");
+// }, 2000);
 
 /////////////////////////////////////////////////////
 // Setup Express app
